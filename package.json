@@ -1,0 +1,57 @@
+{
+  "name": "service-eluvio",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot services/**/*.service.js",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect NATS",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint services",
+    "dc:up": "docker-compose up --build -d",
+    "dc:logs": "docker-compose logs -f",
+    "dc:down": "docker-compose down"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "moleculer-repl": "^0.7.3"
+  },
+  "dependencies": {
+    "@eluvio/elv-client-js": "^4.0.34",
+    "@stretchshop/moleculer-cron": "^0.0.3",
+    "dotenv": "^16.0.3",
+    "file-api": "^0.10.4",
+    "gridfs-stream": "^1.1.1",
+    "moleculer": "^0.14.26",
+    "moleculer-db": "^0.8.23",
+    "moleculer-db-adapter-mongo": "^0.4.15",
+    "moleculer-db-adapter-mongoose": "^0.9.2",
+    "moleculer-mixin-easy-cron": "^1.0.2",
+    "moleculer-web": "^0.10.5",
+    "mongodb": "^5.5.0",
+    "mongoose": "^6.11.1",
+    "nats": "^2.7.1",
+    "node-cron": "^3.0.2",
+    "p-limit": "^4.0.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">= 18.16.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "test",
+    "roots": [
+      "../test"
+    ]
+  }
+}
